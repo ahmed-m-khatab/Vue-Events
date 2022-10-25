@@ -23,13 +23,13 @@ export default {
   padding: 20px;
   width: 250px;
   cursor: pointer;
-  border: 1px solid #39495c;
   margin-bottom: 18px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
 }
 
 .event-card:hover {
   transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
 }
 
 .event-link {

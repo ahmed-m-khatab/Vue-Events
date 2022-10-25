@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div id="flashMessage" v-if="GStore.flashMessage">{{GStore.flashMessage}}</div>
     <nav>
       <router-link :to="{ name: 'EventList' }">Events</router-link> |
       <router-link :to="{ name: 'About' }">About</router-link>
@@ -7,6 +8,12 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  inject: ['GStore']
+}
+</script>
 
 <style>
 #app {
@@ -32,5 +39,23 @@ nav a.router-link-exact-active {
 
 h4 {
   font-size: 20px;
+}
+
+@keyframes yellowfade {
+  from {
+    background: rgb(0, 255, 98);
+  }
+  to {
+    background: transparent;
+  }
+}
+#flashMessage {
+  animation-name: yellowfade;
+  width: fit-content;
+  text-align: center;
+  padding: 10px;
+  margin: 20px auto;
+  animation-duration: 3s;
+  border-radius: 12px;
 }
 </style>
